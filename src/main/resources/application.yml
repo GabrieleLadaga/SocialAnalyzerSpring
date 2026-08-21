@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: social-analyzer-backend
+
+# Configurazione GCP
+gcp:
+  project-id: progetto-sdcc-506015
+  firestore:
+    database-id: (default)
+  pubsub:
+    topic-id: analysis-topic
+    subscription-id: analysis-sub
+  storage:
+    bucket-name: social-reports-bucket
+
+# Configurazione JWT (per demo usiamo una chiave fissa, in produzione usare variabili d'ambiente)
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  expiration-ms: 3600000
+
+# Per sviluppo locale con emulatori (commenta per usare il cloud reale)
+# google:
+#   cloud:
+#     firestore:
+#       emulator:
+#         host: localhost:8080
+#     pubsub:
+#       emulator:
+#         host: localhost:8085
