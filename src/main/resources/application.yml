@@ -7,26 +7,23 @@ spring:
 
 # Configurazione GCP
 gcp:
-  project-id: progetto-sdcc-506015
+  project-id: ${GCP_PROJECT_ID}
   firestore:
-    database-id: (default)
+    database-id: ${FIRESTORE_DATABASE_ID:(default)}
   pubsub:
-    topic-id: analysis-topic
-    subscription-id: analysis-sub
+    topic-id: ${PUBSUB_TOPIC_ID:analysis-topic}
+    subscription-id: ${PUBSUB_SUBSCRIPTION_ID:analysis-sub}
   storage:
-    bucket-name: social-reports-bucket
+    bucket-name: ${STORAGE_BUCKET_NAME:social-reports-bucket}
 
-# Configurazione JWT (per demo usiamo una chiave fissa, in produzione usare variabili d'ambiente)
+# Configurazione JWT 
 jwt:
-  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
-  expiration-ms: 3600000
+  secret: ${JWT_SECRET}
+  expiration-ms: ${JWT_EXPIRATION_MS:3600000}
 
-# Per sviluppo locale con emulatori (commenta per usare il cloud reale)
-# google:
-#   cloud:
-#     firestore:
-#       emulator:
-#         host: localhost:8080
-#     pubsub:
-#       emulator:
-#         host: localhost:8085
+# API Keys
+apify:
+  token: ${APIFY_TOKEN}
+
+gemini:
+  api-key: ${GEMINI_API_KEY}

@@ -19,6 +19,21 @@ target/
 *.iml
 *.ipr
 
+# Virtualenv
+venv/
+env/
+.env
+.env.local
+.env.*.local
+
+# JSON
+service-account-key.json
+src/main/resources/service-account-key.json
+
+# Local Configuration File
+application-local.yml
+application-dev.yml
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
